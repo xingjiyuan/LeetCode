@@ -1,6 +1,8 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -25,6 +27,7 @@ import java.util.Set;
 class Problem15 {
     class Solution {
         public List<List<Integer>> threeSum(int[] nums) {
+            Map<String, List<Integer>> storeMap = new HashMap<>();
             List<List<Integer>> result = new ArrayList<>();
             Set<Integer> store = new HashSet<>();
             if (nums.length < 3) {
@@ -34,11 +37,33 @@ class Problem15 {
             for (int i = 1; i < nums.length - 1; i++) {
                 for (int j = i + 1; j < nums.length; j++) {
                     int find = -nums[i] - nums[j];
-                    if (store.contains(find) && (!store.contains(nums[i]) || nums[i] == find) && (!store.contains(nums[j]) || nums[j] == find)) {
+                    int first = find;
+                    int second = nums[i];
+                    int third = nums[j];
+                    if (first > second) {
+                        int temp = first;
+                        first = second;
+                        second = temp;
+                    }
+                    if (second > third) {
+                        int temp = second;
+                        second = third;
+                        third = temp;
+                    }
+                    if (first > second) {
+                        int temp = first;
+                        first = second;
+                        second = temp;
+                    }
+                    String key = "" + first + second + third;
+                    List<Integer> usedStore = storeMap.get(key);
+                    if (store.contains(find) && !(usedStore != null && usedStore.contains(nums[i]) && usedStore.contains(nums[j]) && usedStore.contains(find))) {
                         List<Integer> temp = new ArrayList<>();
                         temp.add(find);
                         temp.add(nums[i]);
                         temp.add(nums[j]);
+
+                        storeMap.put(key, temp);
                         result.add(temp);
                     }
                 }
