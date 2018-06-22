@@ -10,12 +10,8 @@ class TestMain {
         //System.out.println(new Problem451().new Solution().frequencySort("tree"));
         //System.out.println(new Problem15().new Solution().threeSum(new int[]{-4, -2, 1, -5, -4, -4, 4, -2, 0, 4, 0, -2, 3, 1, -5, 0}));
         //System.out.println(new Problem18().new Solution().fourSum(new int[]{1,-2,-5,-4,-3,3,3,5}, -11));
-        //System.out.println(new Problem16().new Solution().threeSumClosest(new int[]{1,-2,-5,-4,-3,3,3,5}, -11));
-        //System.out.println(new Problem16().new Solution().threeSumClosest(new int[]{-1, 2, 1, -4}, 1));
-        //System.out.println(new Problem16().new Solution().threeSumClosest(new int[]{-3,-2,-5,3,-4}, -1));
-        System.out.println(new Problem16().new Solution().threeSumClosest(new int[]{-55, -24, -18, -11, -7, -3, 4, 5, 6, 9, 11, 23, 33}, 0));
-        System.out.println(new Problem15().new Solution().threeSum(new int[]{-55, -24, -18, -11, -7, -3, 4, 5, 6, 9, 11, 23, 33}));
-        System.out.println(new Problem16().new Solution().threeSumClosest(new int[]{-11, -7, -3, 4, 5, 6, 9, 11, 23, 33}, 0));
+        //System.out.println(new Problem16().new Solution().threeSumClosest(new int[]{-11, -7, -3, 4, 5, 6, 9, 11, 23, 33}, 0));
+        System.out.println(new Problem447().new Solution().numberOfBoomerangs(new int[][]{{0, 0}, {1, 0}, {2, 0}}));
 
     }
 
